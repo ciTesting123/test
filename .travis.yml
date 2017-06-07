@@ -1,3 +1,43 @@
-# test
+sudo: true
+dist: trusty
 language: cpp
-cmake: main.cpp
+
+matrix:
+  include:
+    - compiler: gcc
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - g++-6
+#             - doxygen
+#             - doxygen-doc
+#             - doxygen-latex
+#             - doxygen-gui
+#             - graphviz
+      env: COMPILER=g++-6
+
+# For gcc-6
+before_install:
+  - sudo add-apt-repository --yes ppa:beineri/opt-qt551-trusty
+  - sudo apt-get update -qq
+
+install:
+  - sudo apt-get -y install qt55[QTPACKAGE]
+
+before_script:
+   - QT_ENV_SCRIPT=$(find /opt -name 'qt*-env.sh')
+   - source $QT_ENV_SCRIPT
+
+# after_success:
+#   <generate documentation>
+
+script:
+  - cmake --version
+  - qmake --version
+  - mkdir build
+  - cd build
+  - cmake .. -G "Unix Makefiles"
+  - dir
+  - make && ctest
