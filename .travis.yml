@@ -1,1 +1,3 @@
 # test
+language: cpp
+cmake: main.cpp
