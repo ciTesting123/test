@@ -2,14 +2,9 @@ language:
    - cpp
 
 install:
-   - sudo apt-get update
+   - sudo apt-get update -qq
+   - sudo apt-get install -q gcc-4.8 g++-4.8 libstdc++-4.8-dev libcppunit-dev libboost-all-dev libhdf5-serial-dev libhdf5-dev libhdf5-7 -y
    - sudo apt-get install libyaml-cpp-dev -y
-   - sudo apt-get install libyaml-dev
-   - sudo apt-get install libgtest-dev
-   - cd /usr/src/libyaml
-   - sudo cmake .
-   - sudo make
-   - sudo mv libyaml* /usr/lib/
    - cd /usr/src/gtest
    - sudo cmake .
    - sudo make
