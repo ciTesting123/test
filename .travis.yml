@@ -3,13 +3,16 @@ language:
 
 install:
    - sudo apt-get update -qq
-   - sudo apt-get install -q gcc-4.8 g++-4.8 libstdc++-4.8-dev libcppunit-dev libboost-all-dev libhdf5-serial-dev libhdf5-dev libhdf5-7 -y
-   - sudo apt-get install libyaml-cpp-dev -y
    - cd /usr/src/gtest
    - sudo cmake .
    - sudo make
    - sudo mv libgtest* /usr/lib/
    - cd "${TRAVIS_BUILD_DIR}"
+  - wget https://github.com/jbeder/yaml-cpp/archive/release-0.5.3.tar.gz
+  - tar -xzvf release-0.5.3.tar.gz
+  - pushd release-0.5.3 && ./configure --prefix=/usr && make && sudo make install && popd
+   
+   
 script:
     - mkdir builds
     - cd builds
