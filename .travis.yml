@@ -18,6 +18,7 @@ install:
    - ls -l
    - cmake .
    - sudo make install
+   - ls -l
    - cd "${TRAVIS_BUILD_DIR}"
    
 script:
