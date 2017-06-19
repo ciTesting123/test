@@ -8,6 +8,4 @@ TEST(foo, boo) {
   yaml_parser_initialize(&parser);
 }
 
-TEST(test, failed) {
-  ASSERT_TRUE(false);
-}
+
