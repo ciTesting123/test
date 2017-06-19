@@ -13,6 +13,7 @@ install:
    - tar -xzvf release-0.5.3.tar.gz
    - ls -l
    - cd yaml-cpp-release-0.5.3
+   - ls -l
    - cmake .
    - sudo make install
    - cd "${TRAVIS_BUILD_DIR}"
