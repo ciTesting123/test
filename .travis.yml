@@ -15,10 +15,10 @@ install:
    - tar -xzvf release-0.5.3.tar.gz
    - ls -l
    - cd yaml-cpp-release-0.5.3
-   - ls -l
-   - cmake .
+   - mkdir build
+   - cd build
+   - cmake ..
    - sudo make install
-   - ls -l
    - cd "${TRAVIS_BUILD_DIR}"
    
 script:
