@@ -5,6 +5,10 @@ install:
    - sudo apt-get update
    - sudo apt-get install libyaml-dev
    - sudo apt-get install libgtest-dev
+   - cd /usr/src/libyaml
+   - sudo cmake .
+   - sudo make
+   - sudo mv libyaml* /usr/lib/
    - cd /usr/src/gtest
    - sudo cmake .
    - sudo make
