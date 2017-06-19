@@ -11,7 +11,7 @@ install:
    - cd "${TRAVIS_BUILD_DIR}"
    - wget https://github.com/jbeder/yaml-cpp/archive/release-0.5.3.tar.gz
    - tar -xzvf release-0.5.3.tar.gz
-   - pushd release-0.5.3 && ./configure --prefix=/usr && make && sudo make install && popd
+   - pushd yaml-release-0.5.3 && ./configure --prefix=/usr && make && sudo make install && popd
    
    
 script:
