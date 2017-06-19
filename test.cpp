@@ -5,6 +5,7 @@
 
 TEST(foo, boo) {
   ASSERT_TRUE(true);
+  yaml_parser_initialize(&parser);
 }
 
 TEST(test, failed) {
